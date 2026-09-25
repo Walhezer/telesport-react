@@ -65,7 +65,6 @@ export const useData = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulation d'un appel réseau
     const fetchData = async () => {
       try {
         setIsLoading(true);
