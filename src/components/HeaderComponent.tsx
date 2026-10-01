@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 export interface Indicator {
   label: string;
-  value: string | number;
+  value: number | string;
 }
 
 interface HeaderProps {
@@ -12,16 +12,22 @@ interface HeaderProps {
 
 export const HeaderComponent: FC<HeaderProps> = ({ title, indicators }) => {
   return (
-    <div className="mb-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">{title}</h1>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <header className="col-span-4 md:col-span-8 lg:col-span-12 mb-8">
+      <h1 className="text-2xl md:text-4xl font-bold text-center text-white mb-8">
+        {title}
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
         {indicators.map((indicator, index) => (
-          <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg text-center flex-1 max-w-sm border-2 border-teal-600">
-            <h3 className="text-xl font-semibold mb-2">{indicator.label}</h3>
-            <p className="text-4xl font-bold">{indicator.value}</p>
+          <div 
+            key={index} 
+            className="border-2 border-teal-600 rounded-lg p-6 text-center w-full max-w-sm"
+            aria-label={`Indicateur : ${indicator.label}, valeur : ${indicator.value}`}
+          >
+            <p className="text-white text-lg font-semibold mb-2">{indicator.label}</p>
+            <p className="text-4xl font-bold text-white">{indicator.value}</p>
           </div>
         ))}
       </div>
-    </div>
+    </header>
   );
 };

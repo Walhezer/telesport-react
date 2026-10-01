@@ -57,7 +57,18 @@ const olympicsData: Olympic[] = [
       { id: 25, year: 2004, city: 'Athènes', medalsCount: 33, athleteCount: 308 },
     ],
   },
-];
+  {
+    id: 6,
+    name: 'Suède',
+    participations: [
+      { id: 21, year: 2020, city: 'Tokyo', medalsCount: 33, athleteCount: 378 },
+      { id: 22, year: 2016, city: 'Rio', medalsCount: 42, athleteCount: 401 },
+      { id: 23, year: 2012, city: 'Londres', medalsCount: 34, athleteCount: 330 },
+      { id: 24, year: 2008, city: 'Pékin', medalsCount: 41, athleteCount: 323 },
+      { id: 25, year: 2004, city: 'Athènes', medalsCount: 33, athleteCount: 308 },
+    ],
+  },
+]
 
 export const useData = () => {
   const [data, setData] = useState<Olympic[] | null>(null);
