@@ -68,8 +68,14 @@ const olympicsData: Olympic[] = [
       { id: 25, year: 2004, city: 'Athènes', medalsCount: 33, athleteCount: 308 },
     ],
   },
-]
+];
 
+/**
+ * Hook personnalisé pour récupérer et gérer l'état des données olympiques.
+ * Gère le cycle de vie de la requête (chargement, succès, erreur) en simulant un délai réseau.
+ * 
+ * @returns {{ data: Olympic[] | null, isLoading: boolean, error: string | null }} L'état actuel des données.
+ */
 export const useData = () => {
   const [data, setData] = useState<Olympic[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);

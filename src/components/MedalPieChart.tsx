@@ -7,6 +7,13 @@ interface MedalPieChartProps {
   onCountryClick: (countryId: number) => void;
 }
 
+/**
+ * Composant affichant un graphique en camembert de la répartition totale des médailles.
+ * Rend chaque section cliquable pour déclencher une navigation vers les détails du pays.
+ * 
+ * @param {MedalPieChartProps} props - Les données globales et la fonction de callback au clic.
+ * @returns {JSX.Element} Le graphique en camembert interactif.
+ */
 export const MedalPieChart: FC<MedalPieChartProps> = ({ data, onCountryClick }) => {
   const calculateTotalMedals = (country: Olympic) => {
     return country.participations.reduce((sum, p) => sum + p.medalsCount, 0);

@@ -10,6 +10,12 @@ interface HeaderProps {
   indicators: Indicator[];
 }
 
+/**
+ * Composant d'en-tête affichant le titre principal de la page et une série d'indicateurs clés.
+ * 
+ * @param {HeaderProps} props - Les propriétés du composant (titre et liste d'indicateurs).
+ * @returns {JSX.Element} L'en-tête structuré et responsive.
+ */
 export const HeaderComponent: FC<HeaderProps> = ({ title, indicators }) => {
   return (
     <header className="col-span-4 md:col-span-8 lg:col-span-12 mb-8">

@@ -6,6 +6,12 @@ interface MedalLineChartProps {
   participations: Participation[];
 }
 
+/**
+ * Composant affichant un graphique en courbe de l'évolution des médailles.
+ * 
+ * @param {MedalLineChartProps} props - Les propriétés contenant l'historique des participations du pays.
+ * @returns {JSX.Element} Le graphique chronologique interactif.
+ */
 export const MedalLineChart: FC<MedalLineChartProps> = ({ participations }) => {
   const evolutionData = {
     labels: participations.map((p) => p.year.toString()),

@@ -4,6 +4,13 @@ import { useData } from '../hooks/useData';
 import { HeaderComponent, type Indicator } from '../components/HeaderComponent';
 import { MedalPieChart } from '../components/MedalPieChart';
 
+/**
+ * Composant principal de l'application affichant le tableau de bord.
+ * Gère le cycle de vie des données (chargement, erreur) et affiche les statistiques 
+ * globales ainsi qu'un graphique interactif de répartition des médailles.
+ * 
+ * @returns {JSX.Element} La vue du tableau de bord ou un écran d'état (chargement/erreur).
+ */
 export const Dashboard: FC = () => {
   const { data, isLoading, error } = useData();
   const navigate = useNavigate();

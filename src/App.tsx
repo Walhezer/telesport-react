@@ -26,6 +26,13 @@ ChartJS.register(
   PointElement,
 );
 
+/**
+ * Composant racine de l'application.
+ * Initialise les paramètres globaux.
+ * Définit l'arborescence du routage côté client.
+ * 
+ * @returns {JSX.Element} Le routeur principal englobant toutes les vues de l'application.
+ */
 export const App: FC = () => {
   return (
     <BrowserRouter>

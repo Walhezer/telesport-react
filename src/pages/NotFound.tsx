@@ -1,6 +1,12 @@
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Page d'erreur 404 affichée lorsqu'une route demandée n'existe pas.
+ * Propose une interface de secours avec un bouton pour rediriger l'utilisateur vers l'accueil.
+ * 
+ * @returns {JSX.Element} La vue de la page introuvable.
+ */
 export const NotFound: FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center p-4 text-center">

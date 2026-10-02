@@ -4,6 +4,12 @@ import { useData } from '../hooks/useData';
 import { HeaderComponent, type Indicator } from '../components/HeaderComponent';
 import { MedalLineChart } from '../components/MedalLineChart';
 
+/**
+ * Page de détail d'un pays affichant ses statistiques olympiques et l'évolution chronologique de ses médailles.
+ * Intercepte les ID invalides dans l'URL pour rediriger l'utilisateur vers la page 404.
+ *
+ * @returns {JSX.Element | null} La vue détaillée du pays ou null pendant le processus de redirection/chargement.
+ */
 export const CountryDetail: FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -60,7 +66,6 @@ export const CountryDetail: FC = () => {
           <div className="sr-only">Graphique d'évolution des médailles pour {country.name}</div>
           <div className="relative h-[400px] w-full">
             <MedalLineChart participations={sortedParticipations} />
-            
           </div>
         </section>
 
