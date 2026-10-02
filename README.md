@@ -1,122 +1,66 @@
-# TéléSport - Olympic Games History Dashboard
+# TéléSport - Historique des Jeux Olympiques
 
-Interactive web application to visualize historical performance data of countries in the Olympic Games.
+Application web interactive développée pour TéléSport permettant de visualiser les statistiques et l'historique des performances des pays aux Jeux Olympiques.
 
-## 🚀 Features
+## Fonctionnalités
 
-- **Interactive Dashboard**: View medal counts by country with interactive charts
-- **Country Details**: Explore detailed statistics for each participating country
-- **Data Visualization**: Interactive charts powered by Chart.js
-- **Responsive Design**: Optimized for desktop and mobile devices
-- **Modern Stack**: Built with React 19, TypeScript, and Tailwind CSS
+- **Tableau de bord interactif** : Vue globale des pays participants et répartition des médailles.
+- **Détails par pays** : Statistiques spécifiques (participations, total de médailles, athlètes) et évolution chronologique des résultats.
+- **Visualisation de données** : Intégration de graphiques dynamiques avec Chart.js.
+- **Responsive Design** : Interface optimisée pour Desktop et Mobile (approche Mobile-first).
+- **Navigation SPA fluide** : Routage côté client sécurisé avec page d'erreur 404 (React Router).
 
-## 📋 Prerequisites
+## Stack Technique & Choix Architecturaux
 
-- **Node.js** 22 LTS or higher
-- **npm** (included with Node.js)
+- **React 19 & TypeScript** : Typage strict pour éviter les erreurs d'exécution (zéro `any`).
+- **Tailwind CSS 4** : Utilisation du système de grille (Grid) pour un responsive design robuste et maintien d'un thème sombre cohérent.
+- **Vite 5** : Outil de build ultra-rapide.
+- **Chart.js & React-Chartjs-2** : Rendu optimisé des graphiques en camembert et en courbes.
 
-## 🛠️ Installation
+## Prérequis
 
-Clone the repository:
+- **Node.js** 22 LTS (ou supérieur)
+- **npm** (inclus avec Node.js)
 
+## Installation et Lancement
+
+1. Cloner le dépôt :
 ```bash
-git clone https://github.com/openclassrooms/p2-dfsjs.git
-cd p2-dfsjs
+git clone https://github.com/Walhezer/telesport-react.git
 ```
 
-Install dependencies:
-
+2. Installer les dépendances :
 ```bash
 npm install
 ```
 
-## 🎯 Usage
-
-### Development Server
-
-Start the development server:
-
+3. Lancer le serveur de développement :
 ```bash
 npm run dev
 ```
+L'application sera accessible sur http://localhost:5173
 
-The application will be available at [http://localhost:5173](http://localhost:5173)
+## Architecture du Projet
 
-### Production Build
+Le code a été refactorisé pour suivre une architecture modulaire garantissant la séparation des responsabilités :
 
-Build the application for production:
+```text
+src/
+├── components/      # Composants UI réutilisables (HeaderComponent, graphiques)
+├── pages/           # Vues principales de l'application (Dashboard, CountryDetail, NotFound)
+├── hooks/           # Logique métier et centralisation des appels de données (useData)
+├── models/          # Interfaces TypeScript pour le typage strict des données
+├── App.tsx          # Configuration du routage principal
+└── main.tsx         # Point d'entrée de l'application
 
-```bash
-npm run build
-```
+Gestion des Données
 
-### Linting
+L'application utilise actuellement un mock de données (olympicsData) pour simuler les statistiques. La logique de récupération est centralisée dans un Custom Hook (useData), ce qui permettra plus tard une transition transparente vers une véritable API REST sans modifier l'interface utilisateur.
 
-Run the linter to check code quality:
+Aperçus de l'interface
 
-```bash
-npm run lint
-```
+Desktop : ./docs/desktop.png
 
-## 📁 Project Structure
+Mobile : ./docs/mobile.png
 
-```
-p2-dfsjs/
-├── public/              # Static public assets
-├── src/
-│   ├── App.tsx         # Main application component
-│   ├── main.tsx        # React entry point
-│   └── index.css       # Global styles
-├── index.html          # Main HTML page
-├── package.json        # Project dependencies
-├── tsconfig.json       # TypeScript configuration
-├── vite.config.ts      # Vite configuration
-├── tailwind.config.js  # Tailwind CSS configuration
-└── .eslintrc.cjs       # ESLint configuration
-```
-
-## 🔧 Tech Stack
-
-- **React 19** - UI library with latest features
-- **TypeScript** - Static type checking
-- **Vite 5** - Fast build tool and dev server
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **React Router 6** - Client-side routing
-- **Chart.js** - Interactive data visualization
-- **ESLint** - Code quality and consistency
-
-## 📊 Data
-
-The application currently uses mock data to simulate Olympic Games statistics. This architecture is designed to facilitate future integration with a REST API backend.
-
-## 🎨 Design
-
-The application features:
-
-- Clean, modern interface optimized for data visualization
-- Responsive layout adapting to all screen sizes
-- Interactive charts with hover effects
-- Smooth navigation between pages
-
-## 📚 Documentation
-
-For more information on the technologies used:
-
-- [React Documentation](https://react.dev)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Vite Guide](https://vitejs.dev)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [React Router Documentation](https://reactrouter.com)
-- [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is available for educational and personal use.
-
----
-
-**Built with React 19 + TypeScript + Vite + Tailwind CSS**
+Développé dans le cadre du projet TéléSport - OpenClassrooms
